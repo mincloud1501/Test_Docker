@@ -1,134 +1,245 @@
-## 계정 만드세요.
-http://dropbox.com
-https://hub.docker.com
-https://github.com
+---
+__Advertisement :)__
+
+- __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image
+  resize in browser.
+- __[babelfish](https://github.com/nodeca/babelfish/)__ - developer friendly
+  i18n with plurals support and easy syntax.
+
+You will like those projects!
+
+---
+
+# h1 Heading 8-)
+## h2 Heading
+### h3 Heading
+#### h4 Heading
+##### h5 Heading
+###### h6 Heading
 
 
-## Youtube 체널 : https://www.youtube.com/channel/UC2LdnDZduW6Qw_W18igE_Vg
+## Horizontal Rules
 
-## Devops Tools
-Linux, bashShell, xen, kvm, OpenStack
-Docker, Kubernetes, Rancher, Ansible, Terraform, Jenkins,
+___
 
-# Sublime Text
-## 셋팅 방법 동영상
-https://www.youtube.com/watch?v=ubPYAQJ-HjI
-## Package control install
-https://packagecontrol.io/installation
+---
 
-# Vagrant
-1. Virtualbox를 설치하시오.
-(Windows 10 Home 이하 유저는 Dockertoolbox 설치하면 Virtualbox 자동 설치됨) 
-2. Vagrant를 설치하시오.
-https://www.vagrantup.com/downloads.html 
-3. 아래 스크립트를 통해 vagrant를 통해 Vm을 생성하시오.
-```
-cd
-mkdir test
-cd test/
-vagrant init centos/7
-vagrant up
-vagrant ssh
-```
-
-## Examples
-https://github.com/Finfra/vagrant-examples
+***
 
 
-## Vagrant Commnad
-vagrant init vagrant박스명 ← 생략가능(Vagrantfile이 있으면)
-vagrant up
-vagrant status
-vagrant ssh [node명]
-vagrant halt
-vagrant destroy
-vagrant --help
+## Typographic replacements
+
+Enable typographer option to see result.
+
+(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+
+test.. test... test..... test?..... test!....
+
+!!!!!! ???? ,,  -- ---
+
+"Smartypants, double quotes" and 'single quotes'
 
 
-# Docker
-## Info
-https://hub.docker.com
+## Emphasis
 
-* docker toolbox사용자용.
-```
-docker-machine ip
+**This is bold text**
 
-```
-## command Examples
-```
-docker search 키워드
-docker run -it 이미지명
-docker run -it --name 컨테이너명 이미지명
-docker ps -a
-docker attach
-  ( ctl+p,q )
-docker exec -it 컨테이너명 bash
-docker stop
-docker start
-docker rm -f 컨테이너명
-docker rmi 이미지명
-docker run -d --name n1 -p 호스트포트:게스트포트 nginx
-docker run -d --name n1 -v 호스트패쓰:게스트패쓰 nginx
+__This is bold text__
 
-docker commit -a "JungGu" -m "make xxx" n1 nginx:v1
-docker save -o xx.docker 이미지명:tag
-docker load -i xx.docker
-```
+*This is italic text*
 
-## Image 선택
-1. OFFICIAL
-2. user이름이 없는 것.( nginx → OK, webdevops/nginx → 조심 )
-3. Star높은 것
-4. build script가 공개되어 있는 것.
+_This is italic text_
 
-## Docker run
-* -it or -d
-* --rm
-* --name n1
-* -p 8888:80
-* -v /c/Users/GKN/df:/root/df
+~~Strikethrough~~
 
-### nginx example
-docker run -it --name n1 nginx
-(다른창)
-docker exec -it n1 bash
-# cat /etc/*lease
-# apt update -y
-# apt install -y curl
-# curl 127.0.0.1 or curl 192.168.99.100
 
-### Docker Tip
-```
-# Container : Delete All
-docker rm -f $(docker ps -a -q)
-docker ps -a
+## Blockquotes
 
-# Image : Delete All
-#for Window user
-docker rmi $(docker images -q -f dangling=true)
-#for MacOs user
-docker rmi $(docker images|awk 'BEGIN{FS="\ {2,}"}FNR>1{printf "%s\n", $3}')
-docker images
+
+> Blockquotes can also be nested...
+>> ...by using additional greater-than signs right next to each other...
+> > > ...or with spaces between arrows.
+
+
+## Lists
+
+Unordered
+
++ Create a list by starting a line with `+`, `-`, or `*`
++ Sub-lists are made by indenting 2 spaces:
+  - Marker character change forces new list start:
+    * Ac tristique libero volutpat at
+    + Facilisis in pretium nisl aliquet
+    - Nulla volutpat aliquam velit
++ Very easy!
+
+Ordered
+
+1. Lorem ipsum dolor sit amet
+2. Consectetur adipiscing elit
+3. Integer molestie lorem at massa
+
+
+1. You can use sequential numbers...
+1. ...or keep all the numbers as `1.`
+
+Start numbering with offset:
+
+57. foo
+1. bar
+
+
+## Code
+
+Inline `code`
+
+Indented code
+
+    // Some comments
+    line 1 of code
+    line 2 of code
+    line 3 of code
+
+
+Block code "fences"
 
 ```
+Sample text here...
+```
+
+Syntax highlighting
+
+``` js
+var foo = function (bar) {
+  return bar++;
+};
+
+console.log(foo(5));
+```
+
+## Tables
+
+| Option | Description |
+| ------ | ----------- |
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
+
+Right aligned columns
+
+| Option | Description |
+| ------:| -----------:|
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
 
 
-# Git
-1. Gihub에서 Repository생성
-2. Git clone to Push
-```
-   # Power Shell에서
-   git clone https://github.com/Finfra/testDocker.git
-   cd testDocker/
-   cat .git/config
-   echo "xxx" > README.md
-   git add -A
-   git config --global user.name "NamJungGu"
-   git config --global user.email "nowage@gmail.com"
-   git commit -m "first"
-   git push
-```
-3. git pull
-```
-  git pull
-```
+## Links
+
+[link text](http://dev.nodeca.com)
+
+[link with title](http://nodeca.github.io/pica/demo/ "title text!")
+
+Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
+
+
+## Images
+
+![Minion](https://octodex.github.com/images/minion.png)
+![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
+
+Like links, Images also have a footnote style syntax
+
+![Alt text][id]
+
+With a reference later in the document defining the URL location:
+
+[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
+
+
+## Plugins
+
+The killer feature of `markdown-it` is very effective support of
+[syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
+
+
+### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
+
+> Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
+>
+> Shortcuts (emoticons): :-) :-( 8-) ;)
+
+see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
+
+
+### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
+
+- 19^th^
+- H~2~O
+
+
+### [\<ins>](https://github.com/markdown-it/markdown-it-ins)
+
+++Inserted text++
+
+
+### [\<mark>](https://github.com/markdown-it/markdown-it-mark)
+
+==Marked text==
+
+
+### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
+
+Footnote 1 link[^first].
+
+Footnote 2 link[^second].
+
+Inline footnote^[Text of inline footnote] definition.
+
+Duplicated footnote reference[^second].
+
+[^first]: Footnote **can have markup**
+
+    and multiple paragraphs.
+
+[^second]: Footnote text.
+
+
+### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
+
+Term 1
+
+:   Definition 1
+with lazy continuation.
+
+Term 2 with *inline markup*
+
+:   Definition 2
+
+        { some code, part of Definition 2 }
+
+    Third paragraph of definition 2.
+
+_Compact style:_
+
+Term 1
+  ~ Definition 1
+
+Term 2
+  ~ Definition 2a
+  ~ Definition 2b
+
+
+### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
+
+This is HTML abbreviation example.
+
+It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
+
+*[HTML]: Hyper Text Markup Language
+
+### [Custom containers](https://github.com/markdown-it/markdown-it-container)
+
+::: warning
+*here be dragons*
+:::
